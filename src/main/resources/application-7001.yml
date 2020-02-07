@@ -1,0 +1,14 @@
+server:
+  port: 7001
+eureka:
+  #server:
+  client: # 客户端进行Eureka注册的配置
+    service-url:
+      defaultZone: http://eureka-7002.com:7002/eureka,http://eureka-7003.com:7003/eureka
+    register-with-eureka: false    # 当前的微服务不注册到eureka之中
+    fetch-registry: false     # 不通过eureka获取注册信息
+  instance: # eureak实例定义
+    hostname: eureka-7001.com  # 定义Eureka实例所在的主机名称
+spring:
+  application:
+    name: eureka-7001.com
