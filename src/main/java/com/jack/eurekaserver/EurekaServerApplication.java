@@ -7,6 +7,8 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 /**
  * @author Jack
  *
+ * 服务注册中心
+ *
  * http://localhost:7001/
  * http://localhost:7002/
  * http://localhost:7003/
