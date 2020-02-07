@@ -10,6 +10,10 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
  * http://localhost:7001/
  * http://localhost:7002/
  * http://localhost:7003/
+ * add /etc/hosts
+ * 127.0.0.1  http://eureka-7001.com
+ * 127.0.0.1  http://eureka-7002.com
+ * 127.0.0.1  http://eureka-7003.com
  */
 @SpringBootApplication
 @EnableEurekaServer
