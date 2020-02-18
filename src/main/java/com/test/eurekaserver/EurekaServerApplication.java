@@ -29,6 +29,11 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
  * FEIGN-CONSUMER	n/a (1)	(1)	UP (1) - 192.168.11.38:feign-consumer:9001
  * SERVICE-CONSUMER	n/a (1)	(1)	DOWN (1) - 192.168.11.38:service-consumer:9001
  * SERVICE-PROVIDER	n/a (1)	(1)	UP (1) - 192.168.11.38:service-provider:8001
+ *
+ * http://localhost:7003/
+ * Application	AMIs	Availability Zones	Status
+ * FEIGN-CONSUMER	n/a (2)	(2)	UP (2) - 192.168.11.38:feign-consumer:9001 , 192.168.11.38:feign-consumer:9002
+ * SERVICE-PROVIDER	n/a (2)	(2)	UP (2) - 192.168.11.38:service-provider:8001 , 192.168.11.38:service-provider:8002
  */
 @SpringBootApplication
 @EnableEurekaServer
