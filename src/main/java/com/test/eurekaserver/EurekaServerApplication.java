@@ -7,6 +7,10 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 /**
  * @author Jack
  *
+ * Eureka实例：表示启动的Eureka Server项目。
+ * peer：同伴，Eureka集群中所有Eureka实例之间互称peer。
+ * replica：副本，由于Eureka集群中的Eureka实例之间相互同步注册信息，Eureka实例称其他Eureka实例为自己的replica
+ *
  * 创建基于Eureka的服务注册中心 Server端
  * Exception:
  * c.n.e.registry.AbstractInstanceRegistry  : Registered instance SERVICE_PROVIDER/192.168.11.38:service_provider:8001 with status UP (replication=false)
@@ -41,7 +45,6 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
  *  (3) prefer-ip-address设置为true或默认不填写
  *  (4) The value of register-with-eureka and fetch-registry are all ture(or delete them in properties files,default is true)
  *  (5) defaultZone不能使用localhost，需要使用自己在host中配置的域名，配置项为除自己以外的集群中所有节点
- *
  *
  */
 @SpringBootApplication
