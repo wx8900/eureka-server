@@ -18,10 +18,10 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
  * http://localhost:7003/
  *
  * add /etc/hosts
+ * sudo vi /etc/host
  * 127.0.0.1 eureka-7001.com
  * 127.0.0.1 eureka-7002.com
  * 127.0.0.1 eureka-7003.com
- * 127.0.0.1 eureka-7004.com
  *
  * http://localhost:7001/
  * Instances currently registered with Eureka
@@ -34,6 +34,15 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
  * Application	AMIs	Availability Zones	Status
  * FEIGN-CONSUMER	n/a (2)	(2)	UP (2) - 192.168.11.38:feign-consumer:9001 , 192.168.11.38:feign-consumer:9002
  * SERVICE-PROVIDER	n/a (2)	(2)	UP (2) - 192.168.11.38:service-provider:8001 , 192.168.11.38:service-provider:8002
+ *
+ *  solve unavailable-replicas problem:
+ *  (1) each node of application name in three properties file are same(spring.application.name are same)
+ *  (2) 本地测试时, 各节点都在同一台机器，hostname需要在本地host中填写，各个节点使用自己的host
+ *  (3) prefer-ip-address设置为true或默认不填写
+ *  (4) The value of register-with-eureka and fetch-registry are all ture(or delete them in properties files,default is true)
+ *  (5) defaultZone不能使用localhost，需要使用自己在host中配置的域名，配置项为除自己以外的集群中所有节点
+ *
+ *
  */
 @SpringBootApplication
 @EnableEurekaServer

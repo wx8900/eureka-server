@@ -1,16 +1,14 @@
-server: # 服务端口号
-  port: 7001
+spring:
+  application:
+    name: eureka-server
+
+server.port: 7001
+
 eureka:
-  #server:
-  client: # 客户端进行Eureka注册的配置
-    service-url: # 注册地址
-      defaultZone: http://eureka-7002.com:7002/eureka,http://eureka-7003.com:7003/eureka
-    # 因为自己是注册中心，是否需要将自己注册给自己的注册中心（集群的时候是需要设为true）。表示是否将自己注册在EurekaServer上，默认true
-    register-with-eureka: false    # false表示当前的微服务不注册到eureka之中
-    # 因为自己是注册中心，不需要去检索服务信息
-    fetch-registry: false     # 不通过eureka获取注册信息
-  instance: # eureak实例定义, 注册中心ip地址，也是定义Eureka实例所在的服务名称
+  instance:  # eureak实例定义, 注册中心ip地址，也是定义Eureka实例所在的服务名称
     hostname: eureka-7001.com  # 定义Eureka实例所在的主机名称
-  spring:
-    application:
-      name: eureka-7001.com
+    instance-id: eureka-7001
+  client:  # 客户端进行Eureka注册的配置
+    service-url:  # 注册地址
+      defaultZone: http://eureka-7002.com:7002/eureka,http://eureka-7003.com:7003/eureka
+logging.level.root: info
