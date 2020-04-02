@@ -17,6 +17,9 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
  * 2020-02-12 00:25:31.596 ERROR 11654 --- [reka-7003.com-4] c.n.e.cluster.ReplicationTaskProcessor   : It seems to be a socket read timeout exception, it will retry later. if it continues to happen and some eureka node occupied all the cpu time, you should set property 'eureka.server.peer-node-read-timeout-ms' to a bigger value
  * com.sun.jersey.api.client.ClientHandlerException: java.net.SocketTimeoutException: Read timed out
  *
+ * Below exception is OK.
+ * com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
+ *
  * http://localhost:7001/
  * http://localhost:7002/
  * http://localhost:7003/
