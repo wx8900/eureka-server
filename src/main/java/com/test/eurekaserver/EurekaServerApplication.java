@@ -20,7 +20,6 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
  * Below exception is OK.
  * com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
  *
- *
  *  Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://eureka-7001.com:7001/eureka/}
  *
  * http://localhost:7001/
